@@ -3,10 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C26899327A506F300C0A4FC /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C26899027A506F300C0A4FC /* ViewModel.swift */; };
+		2C26899427A506F300C0A4FC /* GifCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C26899127A506F300C0A4FC /* GifCollectionViewCellViewModel.swift */; };
+		2C26899527A506F300C0A4FC /* GifListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C26899227A506F300C0A4FC /* GifListViewModel.swift */; };
+		2C26899727A5074600C0A4FC /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C26899627A5074600C0A4FC /* MyCell.swift */; };
+		2C26899F27A5079E00C0A4FC /* Dispo_Take_HomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C26899E27A5079E00C0A4FC /* Dispo_Take_HomeTests.swift */; };
 		9A829F02277D7CF7002C03F2 /* APIListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A829F01277D7CF7002C03F2 /* APIListResponse.swift */; };
 		FF9415B525EECD340029E28F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9415B425EECD340029E28F /* AppDelegate.swift */; };
 		FF9415B725EECD340029E28F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9415B625EECD340029E28F /* SceneDelegate.swift */; };
@@ -14,16 +19,30 @@
 		FF9415BE25EECD350029E28F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF9415BD25EECD350029E28F /* Preview Assets.xcassets */; };
 		FF9415C125EECD350029E28F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF9415BF25EECD350029E28F /* LaunchScreen.storyboard */; };
 		FF9415CB25EED1360029E28F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9415CA25EED1360029E28F /* MainViewController.swift */; };
-		FF9415CF25EED15B0029E28F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FF9415CE25EED15B0029E28F /* SnapKit */; };
 		FF9415D225EED25A0029E28F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9415D125EED2590029E28F /* DetailViewController.swift */; };
 		FF9415D525EED60B0029E28F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9415D425EED60B0029E28F /* Constants.swift */; };
-		FF9415DF25EEDC000029E28F /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FF9415DE25EEDC000029E28F /* KingfisherSwiftUI */; };
 		FF9415E225EEDC3A0029E28F /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9415E125EEDC3A0029E28F /* SearchResult.swift */; };
 		FF9415E625EEDF380029E28F /* GifApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9415E525EEDF380029E28F /* GifApiClient.swift */; };
 		FF9415F625EEF5760029E28F /* GifInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9415F525EEF5760029E28F /* GifInfo.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2C2689A027A5079E00C0A4FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF9415A925EECD340029E28F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF9415B025EECD340029E28F;
+			remoteInfo = "Dispo Take Home";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		2C26899027A506F300C0A4FC /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		2C26899127A506F300C0A4FC /* GifCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		2C26899227A506F300C0A4FC /* GifListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifListViewModel.swift; sourceTree = "<group>"; };
+		2C26899627A5074600C0A4FC /* MyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
+		2C26899C27A5079E00C0A4FC /* Dispo Take HomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dispo Take HomeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C26899E27A5079E00C0A4FC /* Dispo_Take_HomeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dispo_Take_HomeTests.swift; sourceTree = "<group>"; };
 		9A829F01277D7CF7002C03F2 /* APIListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIListResponse.swift; sourceTree = "<group>"; };
 		FF9415B125EECD340029E28F /* Dispo Take Home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dispo Take Home.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF9415B425EECD340029E28F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,22 +60,63 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2C26899927A5079E00C0A4FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FF9415AE25EECD340029E28F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF9415DF25EEDC000029E28F /* KingfisherSwiftUI in Frameworks */,
-				FF9415CF25EED15B0029E28F /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C26898C27A5056B00C0A4FC /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2C26898E27A5058A00C0A4FC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2C26899127A506F300C0A4FC /* GifCollectionViewCellViewModel.swift */,
+				2C26899227A506F300C0A4FC /* GifListViewModel.swift */,
+				2C26899027A506F300C0A4FC /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2C26898F27A505B100C0A4FC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FF9415F525EEF5760029E28F /* GifInfo.swift */,
+				FF9415E125EEDC3A0029E28F /* SearchResult.swift */,
+				9A829F01277D7CF7002C03F2 /* APIListResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2C26899D27A5079E00C0A4FC /* Dispo Take HomeTests */ = {
+			isa = PBXGroup;
+			children = (
+				2C26899E27A5079E00C0A4FC /* Dispo_Take_HomeTests.swift */,
+			);
+			path = "Dispo Take HomeTests";
+			sourceTree = "<group>";
+		};
 		FF9415A825EECD340029E28F = {
 			isa = PBXGroup;
 			children = (
 				FF9415B325EECD340029E28F /* Dispo Take Home */,
+				2C26899D27A5079E00C0A4FC /* Dispo Take HomeTests */,
 				FF9415B225EECD340029E28F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				FF9415B125EECD340029E28F /* Dispo Take Home.app */,
+				2C26899C27A5079E00C0A4FC /* Dispo Take HomeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -72,6 +133,9 @@
 		FF9415B325EECD340029E28F /* Dispo Take Home */ = {
 			isa = PBXGroup;
 			children = (
+				2C26898F27A505B100C0A4FC /* Model */,
+				2C26898E27A5058A00C0A4FC /* ViewModel */,
+				2C26898C27A5056B00C0A4FC /* View */,
 				FF9415B425EECD340029E28F /* AppDelegate.swift */,
 				FF9415B625EECD340029E28F /* SceneDelegate.swift */,
 				FF9415E825EEEA4C0029E28F /* Main */,
@@ -96,6 +160,7 @@
 		FF9415E825EEEA4C0029E28F /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				2C26899627A5074600C0A4FC /* MyCell.swift */,
 				FF9415CA25EED1360029E28F /* MainViewController.swift */,
 			);
 			path = Main;
@@ -113,10 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				FF9415D425EED60B0029E28F /* Constants.swift */,
-				FF9415F525EEF5760029E28F /* GifInfo.swift */,
-				FF9415E125EEDC3A0029E28F /* SearchResult.swift */,
 				FF9415E525EEDF380029E28F /* GifApiClient.swift */,
-				9A829F01277D7CF7002C03F2 /* APIListResponse.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -124,6 +186,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2C26899B27A5079E00C0A4FC /* Dispo Take HomeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C2689A227A5079E00C0A4FC /* Build configuration list for PBXNativeTarget "Dispo Take HomeTests" */;
+			buildPhases = (
+				2C26899827A5079E00C0A4FC /* Sources */,
+				2C26899927A5079E00C0A4FC /* Frameworks */,
+				2C26899A27A5079E00C0A4FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2C2689A127A5079E00C0A4FC /* PBXTargetDependency */,
+			);
+			name = "Dispo Take HomeTests";
+			productName = "Dispo Take HomeTests";
+			productReference = 2C26899C27A5079E00C0A4FC /* Dispo Take HomeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		FF9415B025EECD340029E28F /* Dispo Take Home */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF9415C525EECD350029E28F /* Build configuration list for PBXNativeTarget "Dispo Take Home" */;
@@ -138,8 +218,6 @@
 			);
 			name = "Dispo Take Home";
 			packageProductDependencies = (
-				FF9415CE25EED15B0029E28F /* SnapKit */,
-				FF9415DE25EEDC000029E28F /* KingfisherSwiftUI */,
 			);
 			productName = "Dispo Take Home";
 			productReference = FF9415B125EECD340029E28F /* Dispo Take Home.app */;
@@ -151,9 +229,13 @@
 		FF9415A925EECD340029E28F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					2C26899B27A5079E00C0A4FC = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = FF9415B025EECD340029E28F;
+					};
 					FF9415B025EECD340029E28F = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -169,19 +251,25 @@
 			);
 			mainGroup = FF9415A825EECD340029E28F;
 			packageReferences = (
-				FF9415CD25EED15B0029E28F /* XCRemoteSwiftPackageReference "snapkit" */,
-				FF9415DD25EEDC000029E28F /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = FF9415B225EECD340029E28F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				FF9415B025EECD340029E28F /* Dispo Take Home */,
+				2C26899B27A5079E00C0A4FC /* Dispo Take HomeTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2C26899A27A5079E00C0A4FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FF9415AF25EECD340029E28F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -195,11 +283,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2C26899827A5079E00C0A4FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C26899F27A5079E00C0A4FC /* Dispo_Take_HomeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FF9415AD25EECD340029E28F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C26899327A506F300C0A4FC /* ViewModel.swift in Sources */,
 				FF9415F625EEF5760029E28F /* GifInfo.swift in Sources */,
+				2C26899427A506F300C0A4FC /* GifCollectionViewCellViewModel.swift in Sources */,
+				2C26899727A5074600C0A4FC /* MyCell.swift in Sources */,
 				FF9415E625EEDF380029E28F /* GifApiClient.swift in Sources */,
 				FF9415D525EED60B0029E28F /* Constants.swift in Sources */,
 				FF9415E225EEDC3A0029E28F /* SearchResult.swift in Sources */,
@@ -208,10 +307,19 @@
 				FF9415B725EECD340029E28F /* SceneDelegate.swift in Sources */,
 				FF9415D225EED25A0029E28F /* DetailViewController.swift in Sources */,
 				9A829F02277D7CF7002C03F2 /* APIListResponse.swift in Sources */,
+				2C26899527A506F300C0A4FC /* GifListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2C2689A127A5079E00C0A4FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF9415B025EECD340029E28F /* Dispo Take Home */;
+			targetProxy = 2C2689A027A5079E00C0A4FC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FF9415BF25EECD350029E28F /* LaunchScreen.storyboard */ = {
@@ -225,6 +333,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2C2689A327A5079E00C0A4FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y3HVN468NS;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Dispo-Take-HomeTests.Dispo-Take-HomeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dispo Take Home.app/Dispo Take Home";
+			};
+			name = Debug;
+		};
+		2C2689A427A5079E00C0A4FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y3HVN468NS;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Dispo-Take-HomeTests.Dispo-Take-HomeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dispo Take Home.app/Dispo Take Home";
+			};
+			name = Release;
+		};
 		FF9415C325EECD350029E28F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -348,7 +496,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Dispo Take Home/Preview Content\"";
-				DEVELOPMENT_TEAM = XTR8CJ799H;
+				DEVELOPMENT_TEAM = Y3HVN468NS;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Dispo Take Home/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -369,7 +517,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Dispo Take Home/Preview Content\"";
-				DEVELOPMENT_TEAM = XTR8CJ799H;
+				DEVELOPMENT_TEAM = Y3HVN468NS;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Dispo Take Home/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -386,6 +534,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2C2689A227A5079E00C0A4FC /* Build configuration list for PBXNativeTarget "Dispo Take HomeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C2689A327A5079E00C0A4FC /* Debug */,
+				2C2689A427A5079E00C0A4FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FF9415AC25EECD340029E28F /* Build configuration list for PBXProject "Dispo Take Home" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -405,38 +562,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		FF9415CD25EED15B0029E28F /* XCRemoteSwiftPackageReference "snapkit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/snapkit/snapkit.git";
-			requirement = {
-				kind = exactVersion;
-				version = 5.0.0;
-			};
-		};
-		FF9415DD25EEDC000029E28F /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 5.15.6;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		FF9415CE25EED15B0029E28F /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FF9415CD25EED15B0029E28F /* XCRemoteSwiftPackageReference "snapkit" */;
-			productName = SnapKit;
-		};
-		FF9415DE25EEDC000029E28F /* KingfisherSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FF9415DD25EEDC000029E28F /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = KingfisherSwiftUI;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FF9415A925EECD340029E28F /* Project object */;
 }
