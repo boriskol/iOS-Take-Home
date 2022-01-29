@@ -1,7 +1,7 @@
 Dispo Task Submission Details
 
 The app was built using MVVM Architecture
-A collection view showing 25(defoult) tranding gifs whose details can be seen by clicking on it.
-Search feature, showing serach results by typing
+A collection view showing 25(default) tranding gifs whose details can be seen by clicking on it.
+Search feature, replace trading gifs cells with serach gif results.
 Collection view replace cells by search and buy presing submit key button cells scroll to top of collection view.
-DetailVC shows gif image, url , rating and embed AVPlayerViewController which show animated gif mp3
+DetailVC shows gif image, url, rating and embeded AVPlayerViewController which show animated gif mp3
