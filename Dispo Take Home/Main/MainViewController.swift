@@ -93,6 +93,7 @@ class MainViewController: UIViewController {
             spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor),
         ])
         
+        
         viewModel.gifs.bind { [weak self] _ in
             DispatchQueue.main.async { [weak self] in
                 self!.spinner.stopAnimating()
