@@ -1,5 +1,5 @@
 import UIKit
-
+// MARK: APIListResponse Model
 struct APIListResponse: Codable {
     var data: [GifObject]
 }

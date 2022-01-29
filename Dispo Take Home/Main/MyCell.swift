@@ -8,7 +8,7 @@
 import UIKit
 
 class MyCell: UICollectionViewCell {
-
+    // MARK: Cell
     var data: GifCollectionViewCellViewModel? {
             didSet {
                 guard let data = data else { return }

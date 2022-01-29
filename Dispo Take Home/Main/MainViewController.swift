@@ -105,9 +105,6 @@ class MainViewController: UIViewController {
     override func loadView() {
         spinner.startAnimating()
         viewModel.loadGift()
-//        gifApiCall.noquery { [weak self] gifs in
-//            self?.viewModel.gifs.value = gifs
-//        }
     }
     
     private func dismissKeyboard(){
@@ -129,20 +126,14 @@ class MainViewController: UIViewController {
 
 extension MainViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        // TODO: implement
+        // MARK: search
         viewModel.search(search: searchText)
-        //gifApiCall.search(search: searchText, completion: { [weak self] gifs in
-            //self?.viewModel.gifs.value = gifs
-        //})
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let searchT = searchBar.text{
             viewModel.searchGifId(gifID: searchT)
-            //gifApiCall.search(search: searchT, completion: { [weak self] gifs in
-                //self?.viewModel.gifs.value = gifs
             self.collectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath,at: .top,animated: true)
-            //})
         }
     }
 }

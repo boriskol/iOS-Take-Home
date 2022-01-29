@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Combine
+// MARK: GifApiClientCall
 
 class GifApiClientCall {
     
@@ -29,9 +29,7 @@ class GifApiClientCall {
             case .success(let linkdata):
                 let d = linkdata.data.map({return GifCollectionViewCellViewModel(obj: $0)}) 
                 //let d = linkdata.data.compactMap({GifCollectionViewCellViewModel(obj: $0)})
-                //DispatchQueue.main.async { [weak self] in
                 completion(d)
-                //}
             }
         })
     }
@@ -44,9 +42,7 @@ class GifApiClientCall {
             case .success(let linkdata):
                 let d = linkdata.data.map({return GifCollectionViewCellViewModel(obj: $0)}) 
                 //let d = linkdata.data.compactMap({GifCollectionViewCellViewModel(obj: $0)})
-                //DispatchQueue.main.async { [weak self] in
                 completion(d)
-                //}
             }
         })
     }
@@ -57,9 +53,7 @@ class GifApiClientCall {
             case .failure(let error):
                 debugPrint("server error : \(error.localizedDescription)")
             case .success(let linkdata):
-               // DispatchQueue.main.async { [weak self] in
-                completion(linkdata)
-               // }
+               completion(linkdata)
             }
         })
     }

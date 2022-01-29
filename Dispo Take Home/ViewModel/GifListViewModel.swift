@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+// MARK: GifListViewModel
 
 struct GifListViewModel{
     var gifs: Obsevbel<[GifCollectionViewCellViewModel]> = Obsevbel([])

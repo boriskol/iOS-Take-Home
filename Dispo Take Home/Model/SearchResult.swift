@@ -1,5 +1,5 @@
 import UIKit
-
+// MARK: SearchResult Model
 struct SearchResult: Codable {
   var id: String?
   var gifUrl: URL?

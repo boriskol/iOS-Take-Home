@@ -4,7 +4,6 @@ import AVFoundation
 
 class DetailViewController: UIViewController {
     
-    //private var gifViewModel = GifApiClientCall()
     private var viewModel = GifViewModel()
     private var searchResult: SearchResult?
     private var player: AVPlayer!
@@ -126,9 +125,6 @@ class DetailViewController: UIViewController {
     
     override func loadView() {
         
-        
-        
-        //gifViewModel.searchGifId(gifId: searchResult?.id, completion: { [weak self] gif in
         viewModel.gif.bind { [weak self] gif in
             
             guard let gif = gif else {return}
@@ -157,8 +153,6 @@ class DetailViewController: UIViewController {
                 }
         }
         
-        
-       // })
     }
     
     deinit{
