@@ -159,7 +159,7 @@ extension MainViewController: UICollectionViewDataSource {
 
 extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let search = SearchResult(id: viewModel.gifs.value?[indexPath.row].obj.id, gifUrl: viewModel.gifs.value?[indexPath.row].obj.url, title: viewModel.gifs.value?[indexPath.row].obj.title)
+        let search = SearchResult(id: viewModel.gifs.value?[indexPath.row].id, gifUrl: viewModel.gifs.value?[indexPath.row].url, title: viewModel.gifs.value?[indexPath.row].title)
         viewModel.presentVCC(search: search) { [weak self] uIViewController in
             self?.navigationController?.pushViewController(uIViewController, animated: true)
         }

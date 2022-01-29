@@ -136,21 +136,21 @@ class DetailViewController: UIViewController {
         viewModel.gif.bind { [weak self] gif in
             
             guard let gif = gif else {return}
-            if let title = gif.data.title{
+            if let title = gif.title{
                 self?.gifTitle.text = "Title: \(String(describing: title))"
             }
             
-            self?.navTitle.text = gif.data.title
-            if let url = gif.data.url{
+            self?.navTitle.text = gif.title
+            if let url = gif.url{
                 self?.gifSource.text = "Source: \(String(describing: url))"
             }
-            if let rating = gif.data.rating{
+            if let rating = gif.rating{
                 self?.gifRating.text = "Rating: \(String(describing: rating))"
             }
-            if let image = gif.data.images?.fixed_height?.url{
+            if let image = gif.Image{
                 self?.gifViewImage.downloaded(from: image)
             }
-            if let mp3 = gif.data.images?.fixed_height?.mp4 {
+            if let mp3 = gif.video {
                 self?.player = AVPlayer(url: mp3)
                 self?.playerViewController = AVPlayerViewController()
                 self?.playerViewController.player = self?.player

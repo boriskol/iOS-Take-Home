@@ -14,13 +14,13 @@ class MyCell: UICollectionViewCell {
     var data: GifCollectionViewCellViewModel? {
             didSet {
                 guard let data = data else { return }
-                if let t = data.obj.title{
+                if let t = data.title{
                     textLabel.text = "Title: \(t)"
                 }
-                if let r = data.obj.rating{
+                if let r = data.rating{
                     raitingLabel.text = "Rating: \(r)"
                 }
-                if let img = data.obj.images?.fixed_height?.url{
+                if let img = data.Image{
                     gifViewImage.downloaded(from: img)
                 }
             }

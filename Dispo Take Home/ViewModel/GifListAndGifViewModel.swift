@@ -45,7 +45,7 @@ extension MainViewController{
  */
 extension DetailViewController{
     struct DetailViewModel{
-        var gif: Obsevbel<APGifResponse> = Obsevbel(nil)
+        var gif: Obsevbel<GifViewCellViewModel> = Obsevbel(nil)
         weak var appiCall = GifApiClientCall.shared
         
         func searchGifId(gifID: String?){

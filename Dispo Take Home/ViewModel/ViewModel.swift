@@ -29,8 +29,8 @@ class GifApiClientCall {
             case .failure(let error):
                 debugPrint("server error : \(error.localizedDescription)")
             case .success(let linkdata):
-                let d = linkdata.data.map({ return GifCollectionViewCellViewModel(obj: $0) })
-                //let d = linkdata.data.compactMap({GifCollectionViewCellViewModel(obj: $0)})
+                let d = linkdata.data.map({ return GifCollectionViewCellViewModel(id: $0.id, title: $0.title, rating: $0.rating, Image: $0.images?.fixed_height?.url, url: $0.url)
+                })
                 completion(d)
             }
         })
@@ -43,20 +43,20 @@ class GifApiClientCall {
             case .failure(let error):
                 debugPrint("server error : \(error.localizedDescription)")
             case .success(let linkdata):
-                let d = linkdata.data.map({ return GifCollectionViewCellViewModel(obj: $0) })
-                //let d = linkdata.data.compactMap({GifCollectionViewCellViewModel(obj: $0)})
+                let d = linkdata.data.map({ return GifCollectionViewCellViewModel(id: $0.id, title: $0.title, rating: $0.rating, Image: $0.images?.fixed_height?.url, url: $0.url) })
                 completion(d)
             }
         })
     }
-    func searchGifId(gifId:String, completion: @escaping (APGifResponse) -> Void) {
+    func searchGifId(gifId:String, completion: @escaping (GifViewCellViewModel) -> Void) {
         apiProvider?.getRequest(urlParams: [:], gifAcces: gifId, decodable: APGifResponse.self, completion: { [weak self] result in
             guard self != nil else { return }
             switch result {
             case .failure(let error):
                 debugPrint("server error : \(error.localizedDescription)")
             case .success(let linkdata):
-               completion(linkdata)
+                let d = GifViewCellViewModel(id: linkdata.data.id, title: linkdata.data.title, rating: linkdata.data.rating, Image: linkdata.data.images?.fixed_height?.url, video: linkdata.data.images?.fixed_height?.mp4, url: linkdata.data.url)
+               completion(d)
             }
         })
     }
