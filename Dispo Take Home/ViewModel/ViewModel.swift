@@ -2,18 +2,20 @@
 //  SearchViewModel.swift
 //  Dispo Take Home
 //
-//  Created by Borna Libertines on 20/01/22.
+//  Created by Borna Libertines on 21/01/22.
 //
 
 import Foundation
+
 // MARK: GifApiClientCall
+/*
+ responseble to calling api and return velues view model
+ */
 
 class GifApiClientCall {
     
     static let shared = GifApiClientCall()
-    
     var apiProvider: GifAPIClient?
-    
     
     init(apiProvider: GifAPIClient = GifAPIClient()){
         self.apiProvider = apiProvider

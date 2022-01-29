@@ -1,6 +1,9 @@
 import UIKit
 
 // MARK: APIProvider
+/*
+ calls to api for app data
+ */
 public enum APIError: Error {
     case internalError
     case serverError

@@ -2,13 +2,15 @@
 //  UICollectionView.swift
 //  Dispo Take Home
 //
-//  Created by Borna Libertines on 19/01/22.
+//  Created by Borna Libertines on 21/01/22.
 //
 
 import UIKit
 
 class MyCell: UICollectionViewCell {
+    
     // MARK: Cell
+    
     var data: GifCollectionViewCellViewModel? {
             didSet {
                 guard let data = data else { return }

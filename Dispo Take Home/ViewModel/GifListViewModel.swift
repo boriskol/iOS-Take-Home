@@ -2,14 +2,20 @@
 //  GifListViewModel.swift
 //  Dispo Take Home
 //
-//  Created by Borna Libertines on 20/01/22.
+//  Created by Borna Libertines on 22/01/22.
 //
 
 import Foundation
 import UIKit
+
 // MARK: GifListViewModel
+/*
+  view model for MainViewController
+  observe changes in values
+ */
 
 struct GifListViewModel{
+    
     var gifs: Obsevbel<[GifCollectionViewCellViewModel]> = Obsevbel([])
     weak var appiCall = GifApiClientCall.shared
 }
@@ -35,7 +41,10 @@ extension GifListViewModel{
     }
 }
 
-
+// MARK: GifViewModel
+/*
+  view model for DetailViewController
+ */
 struct GifViewModel{
     var gif: Obsevbel<APGifResponse> = Obsevbel(nil)
     weak var appiCall = GifApiClientCall.shared

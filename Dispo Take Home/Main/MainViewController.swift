@@ -1,24 +1,21 @@
 import UIKit
 
-
+// MARK: Obsevbel
+ /*
+  Obsevbel is object which is capable of observing and biding
+  When value have change to update UI
+  The way how we hang on Obseverbel ViewModel
+  */
 class Obsevbel<T>{
-    
     var value: T? {
         didSet{
             listener?(value)
         }
     }
-    
     init(_ value: T?){
         self.value = value
     }
-    
     private var listener: ((T?) -> Void)?
-    
-    /*func bind(_ listener: @escaping(T?) -> Void){
-        self.listener = listener
-    }*/
-    
 }
 extension Obsevbel{
     func bind(_ listener: @escaping(T?) -> Void){
@@ -29,7 +26,7 @@ extension Obsevbel{
 
 class MainViewController: UIViewController {
     
-    //private var gifApiCall = GifApiClientCall()
+    // making instane of view model
     private var viewModel = GifListViewModel()
     
     private lazy var spinner: UIActivityIndicatorView = {
@@ -93,7 +90,8 @@ class MainViewController: UIViewController {
             spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor),
         ])
         
-        
+        // biding change on view model
+        // we stop animation and reload collection view cells
         viewModel.gifs.bind { [weak self] _ in
             DispatchQueue.main.async { [weak self] in
                 self!.spinner.stopAnimating()
@@ -140,6 +138,7 @@ extension MainViewController: UISearchBarDelegate {
 
 
 //MARK: CollectionView
+
 extension MainViewController: UICollectionViewDataSource {
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -193,6 +192,12 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     }*/
     
 }
+
+
+//MARK: UIImageView
+/*
+ download image for UIImageView
+ */
 
 extension UIImageView {
     

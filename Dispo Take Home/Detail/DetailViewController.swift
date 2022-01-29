@@ -2,6 +2,12 @@ import UIKit
 import AVKit
 import AVFoundation
 
+// MARK: DetailViewController
+ /*
+  initiate with SearchResult gif
+  
+  */
+
 class DetailViewController: UIViewController {
     
     private var viewModel = GifViewModel()
@@ -79,6 +85,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.titleView = navTitle
+        // view model search gif by id
         viewModel.searchGifId(gifID: self.searchResult?.id)
         
         view = UIView()
@@ -124,6 +131,7 @@ class DetailViewController: UIViewController {
     }
     
     override func loadView() {
+        // view model bind change on velue
         
         viewModel.gif.bind { [weak self] gif in
             
