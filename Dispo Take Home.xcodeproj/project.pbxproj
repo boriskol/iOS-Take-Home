@@ -77,13 +77,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2C26898C27A5056B00C0A4FC /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		2C26898E27A5058A00C0A4FC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,7 +128,6 @@
 			children = (
 				2C26898F27A505B100C0A4FC /* Model */,
 				2C26898E27A5058A00C0A4FC /* ViewModel */,
-				2C26898C27A5056B00C0A4FC /* View */,
 				FF9415B425EECD340029E28F /* AppDelegate.swift */,
 				FF9415B625EECD340029E28F /* SceneDelegate.swift */,
 				FF9415E825EEEA4C0029E28F /* Main */,
