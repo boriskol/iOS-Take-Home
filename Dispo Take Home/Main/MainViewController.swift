@@ -27,7 +27,7 @@ extension Obsevbel{
 class MainViewController: UIViewController {
     
     // making instane of view model
-    private var viewModel = GifListViewModel()
+    private var viewModel = MainViewModel()
     
     private lazy var spinner: UIActivityIndicatorView = {
         let spinner = UIActivityIndicatorView(style: .large)

@@ -10,7 +10,7 @@ import AVFoundation
 
 class DetailViewController: UIViewController {
     
-    private var viewModel = GifViewModel()
+    private var viewModel = DetailViewModel()
     private var searchResult: SearchResult?
     private var player: AVPlayer!
     private var playerViewController: AVPlayerViewController!
