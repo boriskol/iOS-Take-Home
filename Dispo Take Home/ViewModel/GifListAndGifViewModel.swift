@@ -24,12 +24,12 @@ extension MainViewController{
             }
         }
         func search(search: String?){
-            appiCall?.search(search: search, completion: { gifs in
+            appiCall?.search(search: search!, completion: { gifs in
                 self.gifs.value = gifs
             })
         }
         func searchGifId(gifID: String?){
-            appiCall?.search(search: gifID, completion: { gifs in
+            appiCall?.search(search: gifID!, completion: { gifs in
                 self.gifs.value = gifs
             })
         }
@@ -49,7 +49,7 @@ extension DetailViewController{
         weak var appiCall = GifApiClientCall.shared
         
         func searchGifId(gifID: String?){
-            appiCall?.searchGifId(gifId: gifID, completion: { gif in
+            appiCall?.searchGifId(gifId: gifID!, completion: { gif in
                 self.gif.value = gif
             })
         }

@@ -11,52 +11,28 @@ public enum APIError: Error {
 }
 
 protocol ApiProvider: AnyObject {
-    
-    func search<T: Codable>(search: String?, decodable: T.Type, completion: @escaping (Result<T, APIError>) -> Void)
-    func trending<T: Codable>(decodable: T.Type, completion: @escaping (Result<T, APIError>) -> Void)
-    func searchGif<T: Codable>(gifId: String?, decodable: T.Type, completion: @escaping (Result<T, APIError>) -> Void)
-    
+    func getRequest<T: Codable>(urlParams: [String:String], gifAcces: String?, decodable: T.Type, completion: @escaping (Result<T, APIError>) -> Void)
 }
 
 private struct Domain {
     static let scheme = "https"
     static let host = "api.giphy.com"
-    static let trending = "/v1/gifs/trending"
-    static let search = "/v1/gifs/search"
-    static let searchGifId = "/v1/gifs/"
+    static let path = "/v1/gifs/"
 }
 
 class GifAPIClient: ApiProvider {
-    
-    private func createURL(search: String?, gifId: String?) -> URLRequest {
-        
+   
+    private func createUrl(urlParams: [String:String], gifacces: String?) -> URLRequest {
         var queryItems = [URLQueryItem]()
-        if search != nil {
-            queryItems.append(URLQueryItem(name: "q", value: search))
-            queryItems.append(URLQueryItem(name: "limit", value: Constants.limit))
-            queryItems.append(URLQueryItem(name: "rating", value: Constants.rating))
-            queryItems.append(URLQueryItem(name: "lang", value: Constants.lang))
-        }else if gifId != nil{
-            //queryItems.append(URLQueryItem(name: "gif_id", value: gifId))
-        }else{
-            queryItems.append(URLQueryItem(name: "limit", value: Constants.limit))
-            queryItems.append(URLQueryItem(name: "rating", value: Constants.rating))
-            queryItems.append(URLQueryItem(name: "lang", value: Constants.lang))
-        }
         queryItems.append(URLQueryItem(name: "api_key", value: Constants.giphyApiKey))
+        for (key,value) in urlParams {
+            queryItems.append(URLQueryItem(name: key, value: value))
+        }
         
-            
         var components = URLComponents()
         components.scheme = Domain.scheme
         components.host = Domain.host
-        if search != nil {
-            components.path = Domain.search
-        }else if gifId != nil {
-            components.path = Domain.searchGifId + gifId!
-        }else{
-            components.path = Domain.trending
-        }
-        
+        components.path = Domain.path+gifacces!
         components.queryItems = queryItems.isEmpty ? nil : queryItems
         guard let url = components.url else { preconditionFailure("Bad URL") }
         debugPrint(url.absoluteString)
@@ -65,18 +41,11 @@ class GifAPIClient: ApiProvider {
         return request
     }
     
-    func search<T: Codable>(search: String?, decodable: T.Type, completion: @escaping (Result<T, APIError>) -> Void) {
-        return callT(method: createURL(search: search, gifId: nil).url!, completion: completion)
-    }
-    func trending<T: Codable>(decodable: T.Type, completion: @escaping (Result<T, APIError>) -> Void){
-        return callT(method: createURL(search: nil, gifId: nil).url!, completion: completion)
-    }
-    func searchGif<T: Codable>(gifId: String?, decodable: T.Type, completion: @escaping (Result<T, APIError>) -> Void) {
-        return callT(method: createURL(search: nil, gifId: gifId).url!, completion: completion)
+    func getRequest<T: Codable>(urlParams: [String : String], gifAcces: String?, decodable: T.Type, completion: @escaping (Result<T, APIError>) -> Void){
+        return callT(method: createUrl(urlParams: urlParams, gifacces: gifAcces).url!, completion: completion)
     }
     
-    
-    func callT<T: Codable>(method: URL, completion: @escaping (Result<T, APIError>) -> Void){
+    private func callT<T: Codable>(method: URL, completion: @escaping (Result<T, APIError>) -> Void){
         let config = URLSessionConfiguration.default
         config.allowsConstrainedNetworkAccess = false
         let session = URLSession(configuration: config)
@@ -115,3 +84,45 @@ class GifAPIClient: ApiProvider {
     }
     
 }
+
+/*
+
+    // TODO: Implement
+        func getTrendingGif() {
+        apiClient.getRequest(params: [Constants.rating: Constants.pg], gifType: Constants.trending) { [weak self] (result: APIListResponse) in
+            self?.delegate?.getGifs(result.data)
+        }
+    }
+    func getRequest <ResponseBody: Decodable>(params: [String:String] = [:], gifType: String, completion: @escaping (ResponseBody) -> Void) {
+        
+        let urlComp = NSURLComponents(string: "https://api.giphy.com/v1/gifs/\(gifType)")!
+        
+        var parameters = params
+        parameters["api_key"] = Constants.giphyApiKey
+        var items = [URLQueryItem]()
+        
+        for (key,value) in parameters {
+            items.append(URLQueryItem(name: key, value: value))
+        }
+                
+        urlComp.queryItems = items
+        
+        urlComp.percentEncodedQuery = urlComp.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
+        
+        var urlRequest = URLRequest(url: urlComp.url!)
+        urlRequest.httpMethod = "GET"
+        let session = URLSession.shared
+        
+        let task = session.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
+            if let error = error {}
+                        
+            if let data = data,
+               let httpResponse = response as? HTTPURLResponse,
+               httpResponse.statusCode == 200,
+               let result = try? JSONDecoder().decode(ResponseBody.self, from: data){
+                completion(result)
+            }
+        })
+        task.resume()
+    }
+*/

@@ -127,3 +127,57 @@ class MyCell: UICollectionViewCell {
         debugPrint("deinit GifApiClientCall")
     }
 }
+//MARK: UIImageView
+/*
+ download image for UIImageView
+ */
+
+extension UIImageView {
+    
+    func downloaded(from url: URL, contentMode mode: ContentMode = .scaleToFill) {
+        contentMode = mode
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard
+                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                let data = data, error == nil,
+                let image = UIImage(data: data)
+                else { return }
+            DispatchQueue.main.async() { [weak self] in
+                self?.image = image
+            }
+        }.resume()
+    }
+    func downloaded(from link: String, contentMode mode: ContentMode = .scaleAspectFill) {
+        guard let url = URL(string: link) else { return }
+        downloaded(from: url, contentMode: mode)
+    }
+    
+    
+}
+
+/*
+class ImageCache {
+    var cache = NSCache<NSString, UIImage>()
+    
+    func get(forKey: String) -> UIImage? {
+        return cache.object(forKey: NSString(string: forKey))
+    }
+    
+    func set(forKey: String, image: UIImage) {
+        cache.setObject(image, forKey: NSString(string: forKey))
+    }
+    
+    func delete(forKey: String) {
+        cache.removeObject(forKey: forKey as NSString)
+    }
+}
+
+extension ImageCache {
+    private static var imageCache = ImageCache()
+    static func getImageCache() -> ImageCache {
+        return imageCache
+    }
+}
+
+*/

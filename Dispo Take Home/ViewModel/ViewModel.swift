@@ -5,7 +5,7 @@
 //  Created by Borna Libertines on 21/01/22.
 //
 
-import Foundation
+import UIKit
 
 // MARK: GifApiClientCall
 /*
@@ -21,36 +21,37 @@ class GifApiClientCall {
         self.apiProvider = apiProvider
     }
     
-    
+   
     func noquery(completion: @escaping ([GifCollectionViewCellViewModel]) -> Void) {
-        apiProvider?.trending(decodable: APIListResponse.self, completion: { [weak self] result in
+        apiProvider?.getRequest(urlParams: [Constants.rating: Constants.rating, Constants.limit: Constants.limitNum], gifAcces: Constants.trending, decodable: APIListResponse.self, completion: { [weak self] result in
             guard self != nil else { return }
             switch result {
             case .failure(let error):
                 debugPrint("server error : \(error.localizedDescription)")
             case .success(let linkdata):
-                let d = linkdata.data.map({return GifCollectionViewCellViewModel(obj: $0)}) 
+                let d = linkdata.data.map({ return GifCollectionViewCellViewModel(obj: $0) })
                 //let d = linkdata.data.compactMap({GifCollectionViewCellViewModel(obj: $0)})
                 completion(d)
             }
         })
     }
-    func search(search:String?, completion: @escaping ([GifCollectionViewCellViewModel]) -> Void) {
-        apiProvider?.search(search: search, decodable: APIListResponse.self, completion: { [weak self] result in
-            guard self != nil else {return}
+    
+    func search(search:String, completion: @escaping ([GifCollectionViewCellViewModel]) -> Void) {
+        apiProvider?.getRequest(urlParams: [Constants.searchGif: search, Constants.limit: Constants.limitNum], gifAcces: Constants.search, decodable: APIListResponse.self, completion: { [weak self] result in
+            guard self != nil else { return }
             switch result {
             case .failure(let error):
                 debugPrint("server error : \(error.localizedDescription)")
             case .success(let linkdata):
-                let d = linkdata.data.map({return GifCollectionViewCellViewModel(obj: $0)}) 
+                let d = linkdata.data.map({ return GifCollectionViewCellViewModel(obj: $0) })
                 //let d = linkdata.data.compactMap({GifCollectionViewCellViewModel(obj: $0)})
                 completion(d)
             }
         })
     }
-    func searchGifId(gifId:String?, completion: @escaping (APGifResponse) -> Void) {
-        apiProvider?.searchGif(gifId: gifId, decodable: APGifResponse.self, completion: { [weak self] result in
-            guard self != nil else {return}
+    func searchGifId(gifId:String, completion: @escaping (APGifResponse) -> Void) {
+        apiProvider?.getRequest(urlParams: [:], gifAcces: gifId, decodable: APGifResponse.self, completion: { [weak self] result in
+            guard self != nil else { return }
             switch result {
             case .failure(let error):
                 debugPrint("server error : \(error.localizedDescription)")
