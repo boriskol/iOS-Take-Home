@@ -21,7 +21,10 @@ private struct Domain {
 }
 
 class GifAPIClient: ApiProvider {
-   
+    
+    
+    
+    
     private func createUrl(urlParams: [String:String], gifacces: String?) -> URLRequest {
         var queryItems = [URLQueryItem]()
         queryItems.append(URLQueryItem(name: "api_key", value: Constants.giphyApiKey))
@@ -44,6 +47,7 @@ class GifAPIClient: ApiProvider {
     func getRequest<T: Codable>(urlParams: [String : String], gifAcces: String?, decodable: T.Type, completion: @escaping (Result<T, APIError>) -> Void){
         return callT(method: createUrl(urlParams: urlParams, gifacces: gifAcces).url!, completion: completion)
     }
+    
     
     private func callT<T: Codable>(method: URL, completion: @escaping (Result<T, APIError>) -> Void){
         let config = URLSessionConfiguration.default

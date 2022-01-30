@@ -135,30 +135,23 @@ class DetailViewController: UIViewController {
         
         viewModel.gif.bind { [weak self] gif in
             
-            guard let gif = gif else {return}
-            if let title = gif.title{
-                self?.gifTitle.text = "Title: \(String(describing: title))"
-            }
+            guard let titleGif = gif?.title, let url = gif?.url, let rating = gif?.rating, let image = gif?.Image, let mp3 = gif?.video  else {return}
+
+            self?.gifTitle.text = "Title: \(String(describing: titleGif))"
+            self?.navTitle.text = titleGif
+            self?.gifSource.text = "Source: \(String(describing: url))"
+            self?.gifRating.text = "Rating: \(String(describing: rating))"
+            self?.gifViewImage.downloaded(link: image)
             
-            self?.navTitle.text = gif.title
-            if let url = gif.url{
-                self?.gifSource.text = "Source: \(String(describing: url))"
-            }
-            if let rating = gif.rating{
-                self?.gifRating.text = "Rating: \(String(describing: rating))"
-            }
-            if let image = gif.Image{
-                self?.gifViewImage.downloaded(from: image)
-            }
-            if let mp3 = gif.video {
-                self?.player = AVPlayer(url: mp3)
-                self?.playerViewController = AVPlayerViewController()
-                self?.playerViewController.player = self?.player
-                self?.playerViewController.view.frame = CGRect(x:Constants.screenSize.width/3.5, y: Constants.screenSize.height*0.70, width: Constants.screenSize.width/2.5, height: Constants.screenSize.width/2.5)
-    
-                self?.view.addSubview((self?.playerViewController.view)!)
-                self?.playerViewController.player?.play()
-                }
+           
+            self?.player = AVPlayer(url: mp3)
+            self?.playerViewController = AVPlayerViewController()
+            self?.playerViewController.player = self?.player
+            self?.playerViewController.view.frame = CGRect(x:Constants.screenSize.width/3.5, y: Constants.screenSize.height*0.70, width: Constants.screenSize.width/2.5, height: Constants.screenSize.width/2.5)
+
+            self?.view.addSubview((self?.playerViewController.view)!)
+            self?.playerViewController.player?.play()
+                
         }
         
     }

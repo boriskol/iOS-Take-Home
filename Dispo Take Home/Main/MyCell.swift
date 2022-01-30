@@ -10,19 +10,13 @@ import UIKit
 class MyCell: UICollectionViewCell {
     
     // MARK: Cell
-    
+   
     var data: GifCollectionViewCellViewModel? {
             didSet {
-                guard let data = data else { return }
-                if let t = data.title{
+                guard let t = data?.title, let r = data?.rating, let img = data?.Image  else { return }
                     textLabel.text = "Title: \(t)"
-                }
-                if let r = data.rating{
                     raitingLabel.text = "Rating: \(r)"
-                }
-                if let img = data.Image{
-                    gifViewImage.downloaded(from: img)
-                }
+                    gifViewImage.downloaded(link: img)
             }
     }
     private lazy var stackView: UIStackView = {
@@ -132,11 +126,12 @@ class MyCell: UICollectionViewCell {
  download image for UIImageView
  */
 
+let imageCache = NSCache<NSURL, UIImage>()
 extension UIImageView {
     
-    func downloaded(from url: URL, contentMode mode: ContentMode = .scaleToFill) {
+    func downloaded(urlString: URL, contentMode mode: ContentMode = .scaleToFill) {
         contentMode = mode
-        URLSession.shared.dataTask(with: url) { data, response, error in
+        URLSession.shared.dataTask(with: urlString) { data, response, error in
             guard
                 let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
                 let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
@@ -144,40 +139,19 @@ extension UIImageView {
                 let image = UIImage(data: data)
                 else { return }
             DispatchQueue.main.async() { [weak self] in
+                imageCache.setObject(image, forKey: urlString as NSURL)
                 self?.image = image
             }
         }.resume()
     }
-    func downloaded(from link: String, contentMode mode: ContentMode = .scaleAspectFill) {
-        guard let url = URL(string: link) else { return }
-        downloaded(from: url, contentMode: mode)
-    }
-    
-    
-}
-
-/*
-class ImageCache {
-    var cache = NSCache<NSString, UIImage>()
-    
-    func get(forKey: String) -> UIImage? {
-        return cache.object(forKey: NSString(string: forKey))
-    }
-    
-    func set(forKey: String, image: UIImage) {
-        cache.setObject(image, forKey: NSString(string: forKey))
-    }
-    
-    func delete(forKey: String) {
-        cache.removeObject(forKey: forKey as NSString)
+    func downloaded(link: URL, contentMode mode: ContentMode = .scaleToFill) {
+        if let cachedImage = imageCache.object(forKey: link as NSURL)  {
+            debugPrint("loading fromm catch")
+            self.image = cachedImage
+            return
+        }
+        downloaded(urlString: link, contentMode: mode)
     }
 }
 
-extension ImageCache {
-    private static var imageCache = ImageCache()
-    static func getImageCache() -> ImageCache {
-        return imageCache
-    }
-}
 
-*/
