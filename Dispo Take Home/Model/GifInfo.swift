@@ -1,4 +1,4 @@
-import UIKit
+import Foundation
 
 // MARK: APGifResponse Model
 /// model from api

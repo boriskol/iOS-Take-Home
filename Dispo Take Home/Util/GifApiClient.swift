@@ -22,9 +22,6 @@ private struct Domain {
 
 class GifAPIClient: ApiProvider {
     
-    
-    
-    
     private func createUrl(urlParams: [String:String], gifacces: String?) -> URLRequest {
         var queryItems = [URLQueryItem]()
         queryItems.append(URLQueryItem(name: "api_key", value: Constants.giphyApiKey))
@@ -89,44 +86,3 @@ class GifAPIClient: ApiProvider {
     
 }
 
-/*
-
-    // TODO: Implement
-        func getTrendingGif() {
-        apiClient.getRequest(params: [Constants.rating: Constants.pg], gifType: Constants.trending) { [weak self] (result: APIListResponse) in
-            self?.delegate?.getGifs(result.data)
-        }
-    }
-    func getRequest <ResponseBody: Decodable>(params: [String:String] = [:], gifType: String, completion: @escaping (ResponseBody) -> Void) {
-        
-        let urlComp = NSURLComponents(string: "https://api.giphy.com/v1/gifs/\(gifType)")!
-        
-        var parameters = params
-        parameters["api_key"] = Constants.giphyApiKey
-        var items = [URLQueryItem]()
-        
-        for (key,value) in parameters {
-            items.append(URLQueryItem(name: key, value: value))
-        }
-                
-        urlComp.queryItems = items
-        
-        urlComp.percentEncodedQuery = urlComp.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
-        
-        var urlRequest = URLRequest(url: urlComp.url!)
-        urlRequest.httpMethod = "GET"
-        let session = URLSession.shared
-        
-        let task = session.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
-            if let error = error {}
-                        
-            if let data = data,
-               let httpResponse = response as? HTTPURLResponse,
-               httpResponse.statusCode == 200,
-               let result = try? JSONDecoder().decode(ResponseBody.self, from: data){
-                completion(result)
-            }
-        })
-        task.resume()
-    }
-*/

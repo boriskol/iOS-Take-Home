@@ -13,45 +13,70 @@ import UIKit
   view model for MainViewController
   observe changes in values
  */
-extension MainViewController{
+
     struct MainViewModel{
         var gifs: Obsevbel<[GifCollectionViewCellViewModel]> = Obsevbel([])
-        weak var appiCall = GifApiClientCall.shared
+        
+        var appiCall: GifAPIClient?
+       
+        init(appiCall: GifAPIClient = GifAPIClient()){
+            self.appiCall = appiCall
+        }
 
         func loadGift(){
-            appiCall?.noquery { gifs in
-                self.gifs.value = gifs
-            }
-        }
-        func search(search: String?){
-            appiCall?.search(search: search!, completion: { gifs in
-                self.gifs.value = gifs
+            appiCall?.getRequest(urlParams: [Constants.rating: Constants.rating, Constants.limit: Constants.limitNum], gifAcces: Constants.trending, decodable: APIListResponse.self, completion: { result in
+                switch result {
+                case .failure(let error):
+                    debugPrint("server error : \(error.localizedDescription)")
+                case .success(let linkdata):
+                    let d = linkdata.data.map({ return GifCollectionViewCellViewModel(id: $0.id, title: $0.title, rating: $0.rating, Image: $0.images?.fixed_height?.url, url: $0.url)
+                    })
+                    self.gifs.value = d
+                }
             })
         }
-        func searchGifId(gifID: String?){
-            appiCall?.search(search: gifID!, completion: { gifs in
-                self.gifs.value = gifs
+        func search(search: String){
+            appiCall?.getRequest(urlParams: [Constants.searchGif: search, Constants.limit: Constants.limitNum], gifAcces: Constants.search, decodable: APIListResponse.self, completion: { result in
+                switch result {
+                case .failure(let error):
+                    debugPrint("server error : \(error.localizedDescription)")
+                case .success(let linkdata):
+                    let d = linkdata.data.map({ return GifCollectionViewCellViewModel(id: $0.id, title: $0.title, rating: $0.rating, Image: $0.images?.fixed_height?.url, url: $0.url) })
+                    self.gifs.value = d
+                }
             })
         }
+        
         func presentVCC(search: SearchResult, completion: @escaping (UIViewController) -> Void){
             let secondViewController:DetailViewController = DetailViewController(searchResult: search)
             completion(secondViewController)
         }
     }
-}
+
 // MARK: DetailViewModel
 /*
   view model for DetailViewController
  */
-extension DetailViewController{
+
     struct DetailViewModel{
         var gif: Obsevbel<GifViewCellViewModel> = Obsevbel(nil)
-        weak var appiCall = GifApiClientCall.shared
         
-        func searchGifId(gifID: String?){
-            appiCall?.searchGifId(gifId: gifID!, completion: { gif in
-                self.gif.value = gif
+        var appiCall: GifAPIClient?
+       
+        init(appiCall: GifAPIClient = GifAPIClient()){
+            self.appiCall = appiCall
+        }
+        
+        func searchGifId(gifID: String){
+            appiCall?.getRequest(urlParams: [:], gifAcces: gifID, decodable: APGifResponse.self, completion: { result in
+                switch result {
+                case .failure(let error):
+                    debugPrint("server error : \(error.localizedDescription)")
+                case .success(let linkdata):
+                    let d = GifViewCellViewModel(id: linkdata.data.id, title: linkdata.data.title, rating: linkdata.data.rating, Image: linkdata.data.images?.fixed_height?.url, video: linkdata.data.images?.fixed_height?.mp4, url: linkdata.data.url)
+                    self.gif.value = d
+                }
             })
         }
     }
-}
+

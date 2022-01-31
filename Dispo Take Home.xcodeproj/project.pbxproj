@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C26899327A506F300C0A4FC /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C26899027A506F300C0A4FC /* ViewModel.swift */; };
 		2C26899427A506F300C0A4FC /* GifCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C26899127A506F300C0A4FC /* GifCollectionViewCellViewModel.swift */; };
 		2C26899527A506F300C0A4FC /* GifListAndGifViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C26899227A506F300C0A4FC /* GifListAndGifViewModel.swift */; };
 		2C26899727A5074600C0A4FC /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C26899627A5074600C0A4FC /* MyCell.swift */; };
@@ -37,7 +36,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2C26899027A506F300C0A4FC /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		2C26899127A506F300C0A4FC /* GifCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		2C26899227A506F300C0A4FC /* GifListAndGifViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifListAndGifViewModel.swift; sourceTree = "<group>"; };
 		2C26899627A5074600C0A4FC /* MyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
@@ -82,7 +80,6 @@
 			children = (
 				2C26899127A506F300C0A4FC /* GifCollectionViewCellViewModel.swift */,
 				2C26899227A506F300C0A4FC /* GifListAndGifViewModel.swift */,
-				2C26899027A506F300C0A4FC /* ViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -287,7 +284,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C26899327A506F300C0A4FC /* ViewModel.swift in Sources */,
 				FF9415F625EEF5760029E28F /* GifInfo.swift in Sources */,
 				2C26899427A506F300C0A4FC /* GifCollectionViewCellViewModel.swift in Sources */,
 				2C26899727A5074600C0A4FC /* MyCell.swift in Sources */,

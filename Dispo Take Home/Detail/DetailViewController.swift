@@ -86,7 +86,7 @@ class DetailViewController: UIViewController {
         
         navigationItem.titleView = navTitle
         // view model search gif by id
-        viewModel.searchGifId(gifID: self.searchResult?.id)
+        viewModel.searchGifId(gifID: (self.searchResult?.id)!)
         
         view = UIView()
         

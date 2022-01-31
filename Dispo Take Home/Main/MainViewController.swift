@@ -6,6 +6,12 @@ import UIKit
   When value have change to update UI
   The way how we hang on Obseverbel ViewModel
   */
+
+/// obsevbel taking generic value T init(_ value: T?){self.value = value}
+/// and hangs on single listener, bind obseverbel to single listnere
+/// when value change in  didSet, we invoke that listener, let know bind listener that value have change
+/// this is similar to SwiftUI Obseverbelobject
+/// 
 class Obsevbel<T>{
     var value: T? {
         didSet{
@@ -28,6 +34,7 @@ class MainViewController: UIViewController {
     
     // making instane of view model
     private var viewModel = MainViewModel()
+    private var viewModelDetail = DetailViewModel()
     
     private lazy var spinner: UIActivityIndicatorView = {
         let spinner = UIActivityIndicatorView(style: .large)
@@ -125,14 +132,10 @@ class MainViewController: UIViewController {
 extension MainViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         // MARK: search
-        viewModel.search(search: searchText)
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if let searchT = searchBar.text{
-            viewModel.searchGifId(gifID: searchT)
-            self.collectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath,at: .top,animated: true)
+        if searchText.isEmpty{
+            viewModel.loadGift()
         }
+        viewModel.search(search: searchText)
     }
 }
 

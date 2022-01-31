@@ -1,4 +1,4 @@
-import UIKit
+import Foundation
 
 // MARK: APIListResponse Model
 /// model from api
