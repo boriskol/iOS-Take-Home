@@ -103,10 +103,11 @@ class MainViewController: UIViewController {
             DispatchQueue.main.async { [weak self] in
                 self!.spinner.stopAnimating()
                 self?.collectionView.reloadData()
+                //self?.collectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath,at: .top,animated: true)
             }
         }
     }
-    
+    //viewmodel to ask for gifs
     override func loadView() {
         spinner.startAnimating()
         viewModel.loadGift()
@@ -122,7 +123,7 @@ class MainViewController: UIViewController {
            keyWindow!.endEditing(true)
     }
     deinit{
-        debugPrint("deinit MainViewC")
+        debugPrint("deinit MainViewModel")
     }
     
 }
@@ -136,7 +137,12 @@ extension MainViewController: UISearchBarDelegate {
             viewModel.loadGift()
         }
         viewModel.search(search: searchText)
+        
     }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.loadGift()
+    }
+    
 }
 
 
