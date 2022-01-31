@@ -17,8 +17,8 @@ import UIKit
 struct MainViewModel{
     var gifs: Obsevbel<[GifCollectionViewCellViewModel]> = Obsevbel([])
     
+    // MARK:  Initializer Dependency injestion
     var appiCall: ApiProvider?
-    
     init(appiCall: ApiProvider = GifAPIClient()){
         self.appiCall = appiCall
     }
@@ -35,6 +35,19 @@ struct MainViewModel{
             }
         })
     }
+    // MARK: Parameter Dependency injestion
+    /*
+    func search(search: String, with dependency: GifAPIClient){
+        dependency.getRequest(urlParams: [Constants.searchGif: search, Constants.limit: Constants.limitNum], gifAcces: Constants.search, decodable: APIListResponse.self , completion:{ result in
+            switch result {
+            case .failure(let error):
+                debugPrint("server error : \(error.localizedDescription)")
+            case .success(let linkdata):
+                let d = linkdata.data.map({ return GifCollectionViewCellViewModel(id: $0.id, title: $0.title, rating: $0.rating, Image: $0.images?.fixed_height?.url, url: $0.url) })
+                self.gifs.value = d
+            }
+        })
+    }*/
     func search(search: String){
         appiCall?.getRequest(urlParams: [Constants.searchGif: search, Constants.limit: Constants.limitNum], gifAcces: Constants.search, decodable: APIListResponse.self, completion: { result in
             switch result {
@@ -61,11 +74,12 @@ struct MainViewModel{
 struct DetailViewModel{
     var gif: Obsevbel<GifViewCellViewModel> = Obsevbel(nil)
     
-    var appiCall: ApiProvider?
+    // MARK: Property Dependency injestion
+    var appiCall: ApiProvider? = GifAPIClient()
     
-    init(appiCall: ApiProvider = GifAPIClient()){
+    /*init(appiCall: ApiProvider = GifAPIClient()){
         self.appiCall = appiCall
-    }
+    }*/
     
     func searchGifId(gifID: String){
         appiCall?.getRequest(urlParams: [:], gifAcces: gifID, decodable: APGifResponse.self, completion: { result in

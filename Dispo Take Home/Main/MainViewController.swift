@@ -137,6 +137,8 @@ extension MainViewController: UISearchBarDelegate {
             viewModel.loadGift()
         }
         viewModel.search(search: searchText)
+        // MARK: Parameter Dependency injestion
+        //viewModel.search(search: searchText, with: GifAPIClient())
         
     }
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
