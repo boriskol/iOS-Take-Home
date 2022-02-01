@@ -11,6 +11,8 @@
 		2C26899527A506F300C0A4FC /* GifListAndGifViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C26899227A506F300C0A4FC /* GifListAndGifViewModel.swift */; };
 		2C26899727A5074600C0A4FC /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C26899627A5074600C0A4FC /* MyCell.swift */; };
 		2C26899F27A5079E00C0A4FC /* Dispo_Take_HomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C26899E27A5079E00C0A4FC /* Dispo_Take_HomeTests.swift */; };
+		2C2689AE27A7B9B600C0A4FC /* MockProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2689AD27A7B9B600C0A4FC /* MockProtocol.swift */; };
+		2C2689B427A89CE600C0A4FC /* ApiCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2689B327A89CE600C0A4FC /* ApiCalls.swift */; };
 		9A829F02277D7CF7002C03F2 /* APIListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A829F01277D7CF7002C03F2 /* APIListResponse.swift */; };
 		FF9415B525EECD340029E28F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9415B425EECD340029E28F /* AppDelegate.swift */; };
 		FF9415B725EECD340029E28F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9415B625EECD340029E28F /* SceneDelegate.swift */; };
@@ -41,6 +43,8 @@
 		2C26899627A5074600C0A4FC /* MyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		2C26899C27A5079E00C0A4FC /* Dispo Take HomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dispo Take HomeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C26899E27A5079E00C0A4FC /* Dispo_Take_HomeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dispo_Take_HomeTests.swift; sourceTree = "<group>"; };
+		2C2689AD27A7B9B600C0A4FC /* MockProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockProtocol.swift; sourceTree = "<group>"; };
+		2C2689B327A89CE600C0A4FC /* ApiCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCalls.swift; sourceTree = "<group>"; };
 		9A829F01277D7CF7002C03F2 /* APIListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIListResponse.swift; sourceTree = "<group>"; };
 		FF9415B125EECD340029E28F /* Dispo Take Home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dispo Take Home.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF9415B425EECD340029E28F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				2C26899E27A5079E00C0A4FC /* Dispo_Take_HomeTests.swift */,
+				2C2689AD27A7B9B600C0A4FC /* MockProtocol.swift */,
+				2C2689B327A89CE600C0A4FC /* ApiCalls.swift */,
 			);
 			path = "Dispo Take HomeTests";
 			sourceTree = "<group>";
@@ -276,6 +282,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C2689AE27A7B9B600C0A4FC /* MockProtocol.swift in Sources */,
+				2C2689B427A89CE600C0A4FC /* ApiCalls.swift in Sources */,
 				2C26899F27A5079E00C0A4FC /* Dispo_Take_HomeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,12 +15,13 @@ import UIKit
  */
 
 struct MainViewModel{
-    var gifs: Obsevbel<[GifCollectionViewCellViewModel]> = Obsevbel([])
-    
     // MARK:  Initializer Dependency injestion
+    var gifs: Obsevbel<[GifCollectionViewCellViewModel]>// = Obsevbel([])
     var appiCall: ApiProvider?
-    init(appiCall: ApiProvider = GifAPIClient()){
+    
+    init(appiCall: ApiProvider = GifAPIClient(), gifs: Obsevbel<[GifCollectionViewCellViewModel]> = Obsevbel([])){
         self.appiCall = appiCall
+        self.gifs = gifs
     }
     
     func loadGift(){
