@@ -12,7 +12,7 @@ class Dispo_Take_HomeTests: XCTestCase {
 
    
     var mockedService = MockedService()
-    var gifAPIClient1 = GifAPIClient1()
+    //var gifAPIClient1 = GifAPIClient1()
     var mainCont = MainViewController()
     
     override func setUpWithError() throws {
@@ -71,14 +71,14 @@ class Dispo_Take_HomeTests: XCTestCase {
         let dataTask = session.dataTask(with: url!) { (data, response, error) in
             
             // Make sure we downloaded some data.
-            XCTAssertNotNil(response, "No data was downloaded.")
-            XCTAssertNil(error, "No data was downloaded.")
-            XCTAssertNotNil(data, "No data was downloaded.")
+            XCTAssertNotNil(response, "response")
+            XCTAssertNil(error, "No error.")
+            XCTAssertNotNil(data, "data downloaded.")
             
             do {
                 let object = try JSONDecoder().decode(APIListResponse.self, from: data!)
                 //DispatchQueue.main.async {
-                    XCTAssertNotNil(object, "No data was downloaded.")
+                    XCTAssertNotNil(object, "data downloaded.")
                 //}
             } catch {
                 debugPrint("parsingError catch")
@@ -95,7 +95,7 @@ class Dispo_Take_HomeTests: XCTestCase {
         dataTask.resume()
         
         // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
-        wait(for: [expectation], timeout: 10.0)
+        wait(for: [expectation], timeout: 1.0)
     }
      
     func testExample() throws {
@@ -109,10 +109,11 @@ class Dispo_Take_HomeTests: XCTestCase {
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         measure {
-           
             mainCont.viewDidLoad()
             mainCont.loadView()
             mainCont.searchBar(UISearchBar(), textDidChange: "love")
+            
+            
         }
     }
     

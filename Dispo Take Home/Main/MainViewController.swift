@@ -28,13 +28,32 @@ extension Obsevbel{
         self.listener = listener
     }
 }
-
+/*
+ class Obsevbel<T>{
+     var value: T? {
+         didSet{
+             listener.forEach({
+                 $0!(value)
+             })
+         }
+     }
+     init(_ value: T?){
+         self.value = value
+     }
+     private var listener: [((T?) -> Void)?] = []
+ }
+ extension Obsevbel{
+     func bind(_ listener: @escaping(T?) -> Void){
+         listener(value)
+         self.listener.append(listener)
+     }
+ }
+ */
 
 class MainViewController: UIViewController {
     
     // making instane of view model
     private var viewModel = MainViewModel()
-    private var viewModelDetail = DetailViewModel()
     
     private lazy var spinner: UIActivityIndicatorView = {
         let spinner = UIActivityIndicatorView(style: .large)

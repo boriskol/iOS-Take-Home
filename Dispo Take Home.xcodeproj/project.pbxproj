@@ -13,6 +13,8 @@
 		2C26899F27A5079E00C0A4FC /* Dispo_Take_HomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C26899E27A5079E00C0A4FC /* Dispo_Take_HomeTests.swift */; };
 		2C2689AE27A7B9B600C0A4FC /* MockProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2689AD27A7B9B600C0A4FC /* MockProtocol.swift */; };
 		2C2689B427A89CE600C0A4FC /* ApiCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2689B327A89CE600C0A4FC /* ApiCalls.swift */; };
+		2C2689BC27A8FB3A00C0A4FC /* Dispo_Take_HomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2689BB27A8FB3A00C0A4FC /* Dispo_Take_HomeUITests.swift */; };
+		2C2689BE27A8FB3A00C0A4FC /* Dispo_Take_HomeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2689BD27A8FB3A00C0A4FC /* Dispo_Take_HomeUITestsLaunchTests.swift */; };
 		9A829F02277D7CF7002C03F2 /* APIListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A829F01277D7CF7002C03F2 /* APIListResponse.swift */; };
 		FF9415B525EECD340029E28F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9415B425EECD340029E28F /* AppDelegate.swift */; };
 		FF9415B725EECD340029E28F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9415B625EECD340029E28F /* SceneDelegate.swift */; };
@@ -35,6 +37,13 @@
 			remoteGlobalIDString = FF9415B025EECD340029E28F;
 			remoteInfo = "Dispo Take Home";
 		};
+		2C2689BF27A8FB3A00C0A4FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF9415A925EECD340029E28F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF9415B025EECD340029E28F;
+			remoteInfo = "Dispo Take Home";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +54,9 @@
 		2C26899E27A5079E00C0A4FC /* Dispo_Take_HomeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dispo_Take_HomeTests.swift; sourceTree = "<group>"; };
 		2C2689AD27A7B9B600C0A4FC /* MockProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockProtocol.swift; sourceTree = "<group>"; };
 		2C2689B327A89CE600C0A4FC /* ApiCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCalls.swift; sourceTree = "<group>"; };
+		2C2689B927A8FB3A00C0A4FC /* Dispo Take HomeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dispo Take HomeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C2689BB27A8FB3A00C0A4FC /* Dispo_Take_HomeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dispo_Take_HomeUITests.swift; sourceTree = "<group>"; };
+		2C2689BD27A8FB3A00C0A4FC /* Dispo_Take_HomeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dispo_Take_HomeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9A829F01277D7CF7002C03F2 /* APIListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIListResponse.swift; sourceTree = "<group>"; };
 		FF9415B125EECD340029E28F /* Dispo Take Home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dispo Take Home.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF9415B425EECD340029E28F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +75,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		2C26899927A5079E00C0A4FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C2689B627A8FB3A00C0A4FC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -108,11 +127,21 @@
 			path = "Dispo Take HomeTests";
 			sourceTree = "<group>";
 		};
+		2C2689BA27A8FB3A00C0A4FC /* Dispo Take HomeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2C2689BB27A8FB3A00C0A4FC /* Dispo_Take_HomeUITests.swift */,
+				2C2689BD27A8FB3A00C0A4FC /* Dispo_Take_HomeUITestsLaunchTests.swift */,
+			);
+			path = "Dispo Take HomeUITests";
+			sourceTree = "<group>";
+		};
 		FF9415A825EECD340029E28F = {
 			isa = PBXGroup;
 			children = (
 				FF9415B325EECD340029E28F /* Dispo Take Home */,
 				2C26899D27A5079E00C0A4FC /* Dispo Take HomeTests */,
+				2C2689BA27A8FB3A00C0A4FC /* Dispo Take HomeUITests */,
 				FF9415B225EECD340029E28F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -122,6 +151,7 @@
 			children = (
 				FF9415B125EECD340029E28F /* Dispo Take Home.app */,
 				2C26899C27A5079E00C0A4FC /* Dispo Take HomeTests.xctest */,
+				2C2689B927A8FB3A00C0A4FC /* Dispo Take HomeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -199,6 +229,24 @@
 			productReference = 2C26899C27A5079E00C0A4FC /* Dispo Take HomeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		2C2689B827A8FB3A00C0A4FC /* Dispo Take HomeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C2689C127A8FB3A00C0A4FC /* Build configuration list for PBXNativeTarget "Dispo Take HomeUITests" */;
+			buildPhases = (
+				2C2689B527A8FB3A00C0A4FC /* Sources */,
+				2C2689B627A8FB3A00C0A4FC /* Frameworks */,
+				2C2689B727A8FB3A00C0A4FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2C2689C027A8FB3A00C0A4FC /* PBXTargetDependency */,
+			);
+			name = "Dispo Take HomeUITests";
+			productName = "Dispo Take HomeUITests";
+			productReference = 2C2689B927A8FB3A00C0A4FC /* Dispo Take HomeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		FF9415B025EECD340029E28F /* Dispo Take Home */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF9415C525EECD350029E28F /* Build configuration list for PBXNativeTarget "Dispo Take Home" */;
@@ -231,6 +279,10 @@
 						CreatedOnToolsVersion = 13.2.1;
 						TestTargetID = FF9415B025EECD340029E28F;
 					};
+					2C2689B827A8FB3A00C0A4FC = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = FF9415B025EECD340029E28F;
+					};
 					FF9415B025EECD340029E28F = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -253,12 +305,20 @@
 			targets = (
 				FF9415B025EECD340029E28F /* Dispo Take Home */,
 				2C26899B27A5079E00C0A4FC /* Dispo Take HomeTests */,
+				2C2689B827A8FB3A00C0A4FC /* Dispo Take HomeUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		2C26899A27A5079E00C0A4FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C2689B727A8FB3A00C0A4FC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -288,6 +348,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2C2689B527A8FB3A00C0A4FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C2689BE27A8FB3A00C0A4FC /* Dispo_Take_HomeUITestsLaunchTests.swift in Sources */,
+				2C2689BC27A8FB3A00C0A4FC /* Dispo_Take_HomeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FF9415AD25EECD340029E28F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -314,6 +383,11 @@
 			isa = PBXTargetDependency;
 			target = FF9415B025EECD340029E28F /* Dispo Take Home */;
 			targetProxy = 2C2689A027A5079E00C0A4FC /* PBXContainerItemProxy */;
+		};
+		2C2689C027A8FB3A00C0A4FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF9415B025EECD340029E28F /* Dispo Take Home */;
+			targetProxy = 2C2689BF27A8FB3A00C0A4FC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -366,6 +440,44 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dispo Take Home.app/Dispo Take Home";
+			};
+			name = Release;
+		};
+		2C2689C227A8FB3A00C0A4FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y3HVN468NS;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Dispo-Take-HomeTests.Dispo-Take-HomeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Dispo Take Home";
+			};
+			name = Debug;
+		};
+		2C2689C327A8FB3A00C0A4FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y3HVN468NS;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Dispo-Take-HomeTests.Dispo-Take-HomeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Dispo Take Home";
 			};
 			name = Release;
 		};
@@ -535,6 +647,15 @@
 			buildConfigurations = (
 				2C2689A327A5079E00C0A4FC /* Debug */,
 				2C2689A427A5079E00C0A4FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C2689C127A8FB3A00C0A4FC /* Build configuration list for PBXNativeTarget "Dispo Take HomeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C2689C227A8FB3A00C0A4FC /* Debug */,
+				2C2689C327A8FB3A00C0A4FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

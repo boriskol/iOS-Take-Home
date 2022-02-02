@@ -17,6 +17,7 @@ import UIKit
 struct MainViewModel{
     // MARK:  Initializer Dependency injestion
     var gifs: Obsevbel<[GifCollectionViewCellViewModel]>// = Obsevbel([])
+    
     var appiCall: ApiProvider?
     
     init(appiCall: ApiProvider = GifAPIClient(), gifs: Obsevbel<[GifCollectionViewCellViewModel]> = Obsevbel([])){
