@@ -26,6 +26,9 @@ struct MainViewModel{
     }
     
     func loadGift(){
+        appiCall?.getRequestiOSSoftwareEngineer(name: "Borna Libertines", email: "libertinesb@gmail.com", decodable: APIListResponse.self, completion: { result in
+            debugPrint(result)
+        })
         appiCall?.getRequest(urlParams: [Constants.rating: Constants.rating, Constants.limit: Constants.limitNum], gifAcces: Constants.trending, decodable: APIListResponse.self, completion: { result in
             switch result {
             case .failure(let error):

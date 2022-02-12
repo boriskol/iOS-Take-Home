@@ -26,8 +26,8 @@ class MockedService: ApiProviderT {
     
     let gifListViewModel: GifCollectionViewCellViewModel? = GifCollectionViewCellViewModel(id: "10", title: "test", rating: "g", Image: nil, url: nil)
     func getRequest<T>(urlParams: [String : String], gifAcces: String?, decodable: T.Type, completion: @escaping (Result<T?, APError>) -> Void){
-        completion(.failure(APError.parsingError))
-        //completion(.success(gifListViewModel as? T))
+        //completion(.failure(APError.parsingError))
+        completion(.success(gifListViewModel as? T))
                    
     }
     

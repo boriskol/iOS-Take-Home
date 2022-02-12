@@ -12,6 +12,8 @@ public enum APIError: Error {
 
 protocol ApiProvider: AnyObject {
     func getRequest<T: Codable>(urlParams: [String:String], gifAcces: String?, decodable: T.Type, completion: @escaping (Result<T, APIError>) -> Void)
+    
+   
 }
 
 private struct Domain {
@@ -21,6 +23,10 @@ private struct Domain {
 }
 
 class GifAPIClient: ApiProvider {
+   
+    
+    
+    
     
     private func createUrl(urlParams: [String:String], gifacces: String?) -> URLRequest {
         var queryItems = [URLQueryItem]()
@@ -41,9 +47,12 @@ class GifAPIClient: ApiProvider {
         return request
     }
     
+    
+    
     func getRequest<T: Codable>(urlParams: [String : String], gifAcces: String?, decodable: T.Type, completion: @escaping (Result<T, APIError>) -> Void){
         return callT(method: createUrl(urlParams: urlParams, gifacces: gifAcces).url!, completion: completion)
     }
+    
     
     
     private func callT<T: Codable>(method: URL, completion: @escaping (Result<T, APIError>) -> Void){
@@ -52,7 +61,7 @@ class GifAPIClient: ApiProvider {
         let session = URLSession(configuration: config)
 
         let task = session.dataTask(with: method) { data, response, error in
-            
+            debugPrint(response!)
             guard let httpResponse = response as? HTTPURLResponse, (200 ..< 300) ~= httpResponse.statusCode
                 else {DispatchQueue.main.async {
                     debugPrint("httpResponse error \(response.debugDescription)")
@@ -86,3 +95,15 @@ class GifAPIClient: ApiProvider {
     
 }
 
+extension String {
+    /// Encode a String to Base64
+    func toBase64() -> String {
+        return Data(self.utf8).base64EncodedString()
+    }
+
+    /// Decode a String from Base64. Returns nil if unsuccessful.
+    func fromBase64() -> String? {
+        guard let data = Data(base64Encoded: self) else { return nil }
+        return String(data: data, encoding: .utf8)
+    }
+}

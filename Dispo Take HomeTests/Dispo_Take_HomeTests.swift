@@ -46,8 +46,8 @@ class Dispo_Take_HomeTests: XCTestCase {
                 }
                 
             case .success(let linkdata):
-                XCTAssertNil(linkdata?.data, "is Nil")
-                XCTAssertNotNil(linkdata?.data, "Not Nil")
+                //XCTAssertNil(linkdata?.data, "is Nil")
+                //XCTAssertNotNil(linkdata?.data, "Not Nil")
                 //XCTAssertEqual(linkdata?.rating, gif.rating)
                 if linkdata?.data != nil{
                     XCTAssertNotNil(linkdata?.data, "URL is Not Nil")

@@ -118,10 +118,10 @@ class MainViewController: UIViewController {
         
         // biding change on view model
         // we stop animation and reload collection view cells
-        viewModel.gifs.bind { [weak self] _ in
-            DispatchQueue.main.async { [weak self] in
-                self!.spinner.stopAnimating()
-                self?.collectionView.reloadData()
+        viewModel.gifs.bind { [unowned self] _ in
+            DispatchQueue.main.async {
+                self.spinner.stopAnimating()
+                self.collectionView.reloadData()
                 //self?.collectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath,at: .top,animated: true)
             }
         }
